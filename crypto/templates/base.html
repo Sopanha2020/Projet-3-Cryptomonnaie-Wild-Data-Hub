@@ -1,0 +1,67 @@
+{% load static %}
+{% load django_htmx %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crypto Tracker</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'vendor/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link href="{% static 'vendor/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <!-- Page Content -->
+      <div class="content-area">
+        <div class="container-fluid">
+          <div class="main">
+            {% block body %}
+            {% endblock body %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 text-white-50 mb-2 bg-dark">
+      <div class="container text-center">
+        <small class="text-light">© 2025 Crypto Tracker | Powered by Django & Pythonanywhere</small>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'vendor/jquery.slim.min.js' %}"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- ApexCharts -->
+    <script src="{% static 'vendor/apex/apexcharts.js' %}"></script>
+
+    <!-- HTMX -->
+    <script src="{% static 'vendor/htmx.min.js' %}"></script>
+    {% django_htmx_script %}
+
+    <!-- Custom Scripts -->
+    <script src="{% static 'scripts.js' %}"></script>
+
+    {% block script %}
+    {% endblock script %}
+  </body>
+</html>

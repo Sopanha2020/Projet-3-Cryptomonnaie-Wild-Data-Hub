@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+{% load l10n %}
+{% load crypto_extras %}
+
+{% block body %}
+<div id="crypto"
+     hx-get="{% url 'crypto:dashboard' %}"
+     hx-trigger="every 150s"
+     hx-target="#crypto"
+     hx-select="#crypto"
+     hx-swap="outerHTML">
+
+  <!-- Last Updated Timestamp -->
+  <div class="row mt-2">
+    <div class="col-12 text-right">
+      <small class="nowrap">Updated: {% now "SHORT_DATETIME_FORMAT" %}</small>
+    </div>
+  </div>
+
+  <!-- Title Section -->
+  <div class="row mt-2 mb-4">
+    <div class="col-md-12">
+      <div class="box" style="width:100%">
+        <h4 class="text-center">WILD CRYPTO SCHOOL</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- TradingView Widget -->
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <div class="box" style="height: 850px; width:100%">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+          {
+            "autosize": true,
+            "symbol": "BITCOIN",
+            "interval": "5",
+            "timezone": "Etc/UTC",
+            "theme": "light",
+            "style": "1",
+            "locale": "en",
+            "allow_symbol_change": true,
+            "calendar": false,
+            "support_host": "https://www.tradingview.com"
+          }
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Crypto Information Cards -->
+  <div class="row mt-4 mb-4">
+    {% for crypto in cryptos %}
+    <div class="col-6 col-sm-4 col-md-4 col-lg-3 pb-4">
+      <div class="box">
+        <div class="crypto d-flex align-items-center">
+          <!-- Crypto Image -->
+          <img src="{{ crypto.image.url }}" class="rounded-circle" alt="{{ crypto.display_name }}">
+
+          <!-- Crypto Info -->
+          <div class="d-flex flex-column ml-2">
+            <span class="crypto-name font-weight-bold">{{ crypto.display_name }}</span>
+            <span class="price">
+              {% if crypto.show_overall %}
+                {{ crypto.market_value|currency_symbol }}
+              {% else %}
+                {{ crypto.crypto_value|currency_symbol }}
+              {% endif %}
+            </span>
+
+            <!-- Trading Signal (if available) -->
+            {% if crypto.signal != 'none' %}
+            <span class="signal signal-{{ crypto.signal }} ml-2"
+                  title="{{ crypto.signal_description }}">
+              {{ crypto.get_signal_display }}
+            </span>
+            {% endif %}
+
+            <div class="subinfo d-flex">
+              <span class="earns {% if crypto.percent_change < 0 %}text-danger{% else %}text-success{% endif %} ml-2">
+                {% if crypto.show_overall %}{{ crypto.percent_change|percent }}{% endif %}
+              </span>
+              <span class="overall {% if crypto.crypto_percent < 0 %}text-danger{% else %}text-success{% endif %} ml-1">
+                {{ crypto.crypto_percent|percent }}<sup>24h</sup>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock body %}
+
+{% block script %}
+<script>
+function initCharts() {
+  {% for crypto in crypto_charts %}
+  var options = {
+    series: [{
+      data: [
+        {% for chart in crypto.chart %}
+          {
+            x: new Date({{ chart.timestampg.timestamp|floatformat }}000),
+            y: [
+              {{ chart.open|cryptoformat }},
+              {{ chart.high|cryptoformat }},
+              {{ chart.low|cryptoformat }},
+              {{ chart.close|cryptoformat }}
+            ]
+          },
+        {% endfor %}
+      ]
+    }],
+    chart: {
+      type: 'candlestick',
+      height: 300,
+      toolbar: { show: false },
+      animations: { enabled: false },
+    },
+    title: {
+      text: '{{ crypto.display_name|upper }}',
+      align: 'left',
+    },
+    xaxis: {
+      type: 'datetime',
+      labels: { datetimeUTC: false },
+    },
+    yaxis: {
+      tooltip: { enabled: true },
+    },
+  };
+
+  var chartBar = new ApexCharts(document.querySelector('#{{ crypto.symbol }}'), options);
+  chartBar.render();
+  {% endfor %}
+}
+
+// Reload TradingView Widget Dynamically
+function reloadTradingView() {
+  let container = document.querySelector('.tradingview-widget-container');
+  if (container) {
+    container.innerHTML = `<div class="tradingview-widget-container__widget"></div>`;
+    
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.async = true;
+    script.innerHTML = `{
+      "autosize": true,
+      "symbol": "BITCOIN",
+      "interval": "5",
+      "timezone": "Etc/UTC",
+      "theme": "light",
+      "style": "1",
+      "locale": "en",
+      "allow_symbol_change": true,
+      "calendar": false,
+      "support_host": "https://www.tradingview.com"
+    }`;
+    
+    container.appendChild(script);
+  }
+}
+
+// Ensure charts load on page load
+document.addEventListener("DOMContentLoaded", function() {
+    initCharts();
+    reloadTradingView();
+});
+
+// Reload charts and TradingView after HTMX swap
+document.body.addEventListener('htmx:afterSwap', function() {
+    initCharts();
+    reloadTradingView();
+});
+</script>
+{% endblock script %}
