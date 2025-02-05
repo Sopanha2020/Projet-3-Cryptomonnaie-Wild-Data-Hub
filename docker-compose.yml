@@ -1,0 +1,58 @@
+version: '3.11'
+
+services:
+  web:
+    build:
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - POSTGRES_DB=crypto_tracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Khem0055
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_DB: crypto_tracker
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Khem0055
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: .
+    command: celery -A config worker -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - db
+
+  celery-beat:
+    build: .
+    command: celery -A config beat -l info
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+      - db
+
+volumes:
+  postgres_data: {}
