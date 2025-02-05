@@ -1,0 +1,27 @@
+/* static/admin/css/crypto_admin.css */
+.signal-options {
+    display: flex;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.signal-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signal-option:hover {
+    background-color: #f5f5f5;
+}
+
+.signal-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+.signal-buy { border-left: 4px solid #4CAF50; }
+.signal-sell { border-left: 4px solid #f44336; }
+.signal-none { border-left: 4px solid #9E9E9E; }
