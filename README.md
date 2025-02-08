@@ -1,6 +1,6 @@
 # 💰 Projet-3-Cryptomonnaie-Wild-Data-Hub
 
-C'est le résultat du deuxième projet réalisé lors de ma formation en tant que _DATA ANALYST_ à la **Wild Code School** à Lille.
+C'est le résultat du troisième projet réalisé lors de ma formation en tant que _DATA ANALYST_ à la **Wild Code School** à Lille.
 
 ## 🎯 Objectif du Projet :
 
