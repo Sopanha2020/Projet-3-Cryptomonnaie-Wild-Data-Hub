@@ -214,8 +214,6 @@ Login with the credentials just created, to then add the `Cryptos` you wish to t
 Once added, `Purchases` enable you to indicate your assets/amount for each crypto.
 
 
-[![Buy me a Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alfonsrv)  
-
 ---
 
 ## TODOs 🛠️
