@@ -27,18 +27,6 @@ nombre de points requis par appel d'API, ce qui nécessite d'augmenter le temps 
 
 ---
 
-## 👾 Déploiement
-
-Le déploiement est recommandé via Docker. Il est également possible d’installer chaque composant manuellement, mais cette méthode est fastidieuse et ne sera donc pas détaillée ici.
-
-Cette application est conçue pour être exécutée derrière un proxy inverse comme **Traefik** ou un **pare-feu applicatif (WAF)** qui gère les certificats SSL, tels que **LetsEncrypt**.
-
-Une fois déployée, l’application sera accessible via :
-
-```
-http://<adresse-ip>:5000
-```
-
 ### 📌 Prérequis
 
 - [Docker](https://docs.docker.com/get-docker/)  
@@ -85,7 +73,7 @@ Sinon, ajoutez `-d` à la commande `docker-compose` dans le script `rebuild` pou
 Une fois l’application lancée, accédez au **panneau d’administration** via :  
 
 ```
-http://<adresse-ip>:5000/admin
+http://127.0.0.1/:8000/admin
 ```
 
 Pour y accéder, créez un utilisateur administrateur avec la commande suivante :  
@@ -107,4 +95,4 @@ Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montant
 
 ## 📎 Livrables
 
-* Application : ouvrez à partir de l'url suivante : [dashboard-pythonanywhere](https://projet-2-group-moving-frame-systeme-de-recommandation-de-films.streamlit.app/). 
+* Application : ouvrez à partir de l'url suivante : [dashboard-pythonanywhere](https://roberto7891.pythonanywhere.com). 
