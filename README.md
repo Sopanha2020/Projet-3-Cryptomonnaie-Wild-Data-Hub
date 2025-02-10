@@ -23,7 +23,7 @@ nombre de points requis par appel d'API, ce qui nécessite d'augmenter le temps 
 💸 Affichage de la valeur globale ou actuelle  
 💸 Conversion des valeurs en devise locale  
 💸 Graphique de l'évolution des cryptomonnaies  
-💸 Bientôt : alertes via discord 
+💸 Envoie d'alertes via discord 
 
 ---
 
