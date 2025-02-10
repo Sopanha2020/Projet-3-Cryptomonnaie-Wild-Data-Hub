@@ -2,6 +2,8 @@
 
 Ceci est le fruit du troisième projet que j'ai conçu dans le cadre de ma formation en tant que _DATA ANALYST_ à la **Wild Code School** de Lille.
 
+![Image](https://github.com/user-attachments/assets/1af4003b-06d5-43a0-9353-c6b42e03d719)
+
 ## 🎯 Objectif du Projet :
 
 Tableau de bord pour surveiller de manière centralisée les évolutions actuelles du portefeuille de crypto-monnaies, en fournissant un aperçu de leur valeur actuelle, de l'évolution des prix sur 24 heures et des alertes de tendance.
