@@ -9,17 +9,12 @@ Les données de cours actuelles sont interrogées à partir de l'API REST de Coi
 un maximum de 333 points de requêtes quotidiennes (~1 requête / 5 min). L'interrogation de plusieurs cryptos peut augmenter le
 nombre de points requis par appel d'API, ce qui nécessite d'augmenter le temps entre les requêtes.
 
-## ✅ Etapes : 
-
-#### Semaine 1 :  
-Appropriation et première exploration des données     
-Outils principaux : jupyter, pandas, gzip   
+## ⌛ Temps Imparti : 
+6 semaines
 
 
 ## 📎 Livrables
 
-* Exploration et infiltrage des données : ouvrez les notebooks correspondants dans Jupyter : [Notebook](https://github.com/Sopanha2020/Projet-2-Group-Moving-Frame-Systeme-de-Recommandation-de-Films/blob/main/Notebooks/TMDB%20IMDB%20Data%20Wrangling.ipynb).  
-* Nettoyage et visualisation des données : ouvrez les notebooks correspondants dans Google Colab : [Notebook](https://github.com/Sopanha2020/Projet-2-Group-Moving-Frame-Systeme-de-Recommandation-de-Films/blob/main/Notebooks/Film_Recommendation_System.ipynb).
 * Application : ouvrez à partir de l'url suivante : [appli-streamlit](https://projet-2-group-moving-frame-systeme-de-recommandation-de-films.streamlit.app/). 
 
 ## 📡 Installation
