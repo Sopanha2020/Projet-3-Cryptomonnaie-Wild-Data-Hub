@@ -29,9 +29,9 @@ nombre de points requis par appel d'API, ce qui nécessite d'augmenter le temps 
 
 ### 📌 Prérequis
 
-- [Docker](https://docs.docker.com/get-docker/)  
+- [docker](https://docs.docker.com/get-docker/)  
 - [docker-compose](https://docs.docker.com/compose/install/)  
-- [Clé API CoinMarketCap](https://coinmarketcap.com/api/)
+- [clé API CoinMarketCap](https://coinmarketcap.com/api/)
 
 ---
 
