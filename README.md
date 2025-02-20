@@ -86,5 +86,3 @@ chmod +x docker/manage-shortcut
 Connectez-vous avec les identifiants créés, puis ajoutez les cryptomonnaies que vous souhaitez suivre.  
 Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montants détenus.
 
----
-
