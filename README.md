@@ -88,11 +88,3 @@ Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montant
 
 ---
 
-## 🛠️ TODOs
-
-- Redimensionner les images  
-- Ajout d'alertes de prix
-
-## 📎 Livrables
-
-* Application : ouvrez à partir de l'url suivante : [dashboard-pythonanywhere](https://roberto7891.pythonanywhere.com). 
