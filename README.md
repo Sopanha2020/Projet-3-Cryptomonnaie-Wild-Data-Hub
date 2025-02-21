@@ -85,5 +85,9 @@ chmod +x docker/manage-shortcut
 
 Connectez-vous avec les identifiants créés, puis ajoutez les cryptomonnaies que vous souhaitez suivre.  
 Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montants détenus.
-## Presentation
-https://chrisyk59.github.io/crypto-school/
+
+## 📎 Présentation
+
+* Présentation : ouvrez à partir de l'url suivante : [Presentaion](https://chrisyk59.github.io/crypto-school/). 
+
+
