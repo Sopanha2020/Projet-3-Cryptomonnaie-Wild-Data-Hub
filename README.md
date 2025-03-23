@@ -68,26 +68,30 @@ Sinon, ajoutez `-d` à la commande `docker-compose` dans le script `rebuild` pou
 
 ---
 
-## 🔥 Utilisation
-
-Une fois l’application lancée, accédez au **panneau d’administration** via :  
+## 🔥 Déploiement avec GCP
 
 ```
-http://127.0.0.1/:8000/admin
+gcloud auth login
 ```
 
-Pour y accéder, créez un utilisateur administrateur avec la commande suivante :  
-
-```bash
-chmod +x docker/manage-shortcut
-./docker/manage-shortcut createsuperuser
+```
+gcloud run services update crypto-web --set-env-vars SECRET_KEY='uPCFulvI_xSdvgNcJYpkQZiOi_jdB5Vo00m3GBOmv_heHj7yZeiP7TTv7WmZtPm-I4s' --region=europe-west4
 ```
 
-Connectez-vous avec les identifiants créés, puis ajoutez les cryptomonnaies que vous souhaitez suivre.  
-Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montants détenus.
+```
+gcloud run services update crypto-celery --set-env-vars SECRET_KEY='uPCFulvI_xSdvgNcJYpkQZiOi_jdB5Vo00m3GBOmv_heHj7yZeiP7TTv7WmZtPm-I4s' --region=europe-west4
+```
+
+```
+gcloud run services update crypto-celery-beat --set-env-vars SECRET_KEY='uPCFulvI_xSdvgNcJYpkQZiOi_jdB5Vo00m3GBOmv_heHj7yZeiP7TTv7WmZtPm-I4s' --region=europe-west4
+```
+
+```
+gcloud run deploy crypto-web --image=europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest --platform=managed --region=europe-west4 --allow-unauthenticated --env-vars-file=env.yaml --add-cloudsql-instances=elegant-plating-450615-d3:europe-west4:crypto-postgres
+```
+
+Application : ouvrez à partir de l'url suivante : [appli-sur-gcp](https://crypto-web-977395841698.europe-west4.run.app/). 
 
 ## 📎 Présentation
 
 * Présentation : ouvrez à partir de l'url suivante : [Presentation](https://chrisyk59.github.io/crypto-school/). 
-
-
