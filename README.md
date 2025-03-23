@@ -57,16 +57,41 @@ vi .env
 
 ## 🚀 Déploiement avec Docker
 
-```bash
-mv docker/docker-compose .
-mv docker/rebuild-shortcut rebuild
-chmod +x ./rebuild
-./rebuild
+```
+docker build . --tag europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest
 ```
 
-L’application devrait maintenant être opérationnelle.  
-Pour un démarrage automatique au **boot**, utilisez un service système (ou `cron`).  
-Sinon, ajoutez `-d` à la commande `docker-compose` dans le script `rebuild` pour le lancer manuellement à chaque démarrage.
+```
+docker build . --tag europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/o/crypto-celery:latest
+```
+
+```
+docker build . --tag europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-celery-beat:latest
+```
+
+```
+docker push europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest
+```
+
+```
+docker push europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/o/crypto-celery:latest
+```
+
+```
+docker push europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-celery-beat:latest
+```
+
+```
+docker image rm europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest
+```
+
+```
+docker build . --tag europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest
+```
+
+```
+docker push europe-west4-docker.pkg.dev/elegant-plating-450615-d3/crypto-tracker/crypto-web:latest
+```
 
 ---
 
@@ -93,6 +118,8 @@ gcloud run deploy crypto-web --image=europe-west4-docker.pkg.dev/elegant-plating
 ```
 
 Application : ouvrez à partir de l'url suivante : [appli-sur-gcp](https://crypto-web-977395841698.europe-west4.run.app/). 
+
+---
 
 ## 📎 Présentation
 
