@@ -88,6 +88,6 @@ Ensuite, utilisez l’onglet **"Purchases"** pour indiquer vos actifs et montant
 
 ## 📎 Présentation
 
-* Présentation : ouvrez à partir de l'url suivante : [Presentaion](https://chrisyk59.github.io/crypto-school/). 
+* Présentation : ouvrez à partir de l'url suivante : [Presentation](https://chrisyk59.github.io/crypto-school/). 
 
 
