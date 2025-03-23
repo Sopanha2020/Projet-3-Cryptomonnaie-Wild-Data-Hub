@@ -4,6 +4,8 @@ Ceci est le fruit du troisième projet que j'ai conçu dans le cadre de ma forma
 
 ![Image](https://github.com/user-attachments/assets/1af4003b-06d5-43a0-9353-c6b42e03d719)
 
+![Image](https://github.com/user-attachments/assets/ea1562b8-9d8a-4ea8-a302-180116f58a3a)
+
 ## 🎯 Objectif du Projet :
 
 Tableau de bord pour surveiller de manière centralisée les évolutions actuelles du portefeuille de crypto-monnaies, en fournissant un aperçu de leur valeur actuelle, de l'évolution des prix sur 24 heures et des alertes de tendance.
