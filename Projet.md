@@ -44,22 +44,22 @@ Le projet se déroule sur 4 semaines selon une approche itérative et collaborat
 1. Acquisition des Données <br>
 * Technologies : Python, APIs REST, web scraping, fichiers structurés/non-structurés
 * Objectif :
-- Mettre en place un système de collecte de données adapté aux sources choisies
-- Assurer une collecte régulière et fiable des données
+  - Mettre en place un système de collecte de données adapté aux sources choisies
+  - Assurer une collecte régulière et fiable des données
 * Lien avec l’étape suivante : Les données brutes sont transmises au processus de nettoyage
   
 2. Traitement et Nettoyage <br>
 * Technologies : Python (pandas, numpy), outils de data cleaning
 * Objectif :
-- Nettoyer et structurer les données collectées
-- Standardiser les formats pour une exploitation optimale
+  - Nettoyer et structurer les données collectées
+  - Standardiser les formats pour une exploitation optimale
 * Lien avec l’étape suivante : Les données nettoyées sont prêtes pour l’intégration en base de données
   
 3. Infrastructure de Données <br>
 * Technologies : Outil ETL au choix, Base de données PostregreSQL
 * Objectif :
-- Implémenter un pipeline ETL automatisé
-- Concevoir et maintenir une base de données adaptée au projet
+  - Implémenter un pipeline ETL automatisé
+  - Concevoir et maintenir une base de données adaptée au projet
 * Lien avec l’étape suivante : La base de données alimente les visualisations
   
 4. Visualisation <br>
@@ -70,19 +70,18 @@ Le projet se déroule sur 4 semaines selon une approche itérative et collaborat
 5. Interface Utilisateur <br>
 * Technologies : Framework web/dashboard au choix
 * Objectif : Créer une interface intuitive permettant :
-- La recherche et le filtrage des données
-- La personnalisation des visualisations
-- L’export des résultats
-- La sauvegarde des préférences utilisateur
+  - La recherche et le filtrage des données
+  - La personnalisation des visualisations
+  - L’export des résultats
+  - La sauvegarde des préférences utilisateur
 
 6. Enrichissement IA (Optionnel) <br>
-
 * Technologies : Frameworks IA/ML, APIs IA
 * Objectifs :
-- Analyse prédictive des données
-- Classification automatique
-- Traitement du langage naturel si pertinent
-- Enrichissement des données par IA
+  - Analyse prédictive des données
+  - Classification automatique
+  - Traitement du langage naturel si pertinent
+  - Enrichissement des données par IA
 
 ## Missions et Livrables Attendus
 
