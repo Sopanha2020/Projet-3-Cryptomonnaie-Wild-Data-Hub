@@ -9,7 +9,7 @@ Ceci est le fruit du troisième projet que j'ai conçu dans le cadre de ma forma
 ## 🎯 Objectif du Projet :
 
 Tableau de bord pour surveiller de manière centralisée les évolutions actuelles du portefeuille de crypto-monnaies, en fournissant un aperçu de leur valeur actuelle, de l'évolution des prix sur 24 heures et des alertes de tendance.
-Les données de cours actuelles sont interrogées à partir de l'API REST de CoinMarketCap et stockées dans postgreSQL. L'API vous permet de faire
+Les données de cours actuelles sont faits des requêtes à partir de l'API REST de CoinMarketCap et stockées dans postgreSQL. L'API vous permet de faire
 un maximum de 333 points de requêtes quotidiennes (~1 requête / 5 min). L'appel de plusieurs cryptos peut augmenter le
 nombre de points requis par appel d'API, ce qui nécessite d'augmenter le temps entre les requêtes.
 
